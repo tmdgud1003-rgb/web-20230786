@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox 레이아웃 실습</title>
+    <style>
+        .container {
+            width: 1080px;
+            margin: 0 auto 8px auto;
+        }
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-wrapper {
+            padding: 8px 0;
+        }
+        .gnb {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .gnb li {
+            padding-left: 16px;
+        }
+        .gnb li:first-child { padding-left: 0; }
+
+        .rank {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+        .left {
+            width: 740px;
+            height: 428px;
+            background-color: #d9534f;
+        }
+        .right {
+            width: 332px;
+            height: 428px;
+            background-color: #337ab7;
+        }
+        .footer {
+            height: 80px;
+            background-color: #f0ad4e;
+        }
+
+        h1 { margin: 0; padding: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <header class="container">
+        <h1>Logo</h1>
+    </header>
+
+    <nav class="container nav-wrapper flex-row">
+        <ul class="gnb">
+            <li>메일</li>
+            <li>카페</li>
+            <li>블로그</li>
+            <li>쇼핑</li>
+        </ul>
+        <ul class="rank">
+            <li>실시간 검색 순위</li>
+        </ul>
+    </nav>
+
+    <main class="container content-wrapper">
+        <div class="left"></div>
+        <div class="right"></div>
+    </main>
+    <main class="container content-wrapper">
+        <div class="left"></div>
+        <div class="right"></div>
+    </main>
+
+    <footer class="container">
+        <div class="footer"></div>
+    </footer>
+
+</body>
+</html>
