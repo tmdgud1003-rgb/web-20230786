@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>9장</title>
+    <script>
+/* 1. cm → feet/inch */
+function convert() {
+    let cm = Number(document.getElementById("cmInput").value);
+    let totalInch = cm / 2.54;
+    let feet = Math.floor(totalInch / 12);
+    let inch = totalInch % 12;
+
+    document.getElementById("convertResult").innerHTML =
+        cm + " cm = " + feet + " feet " + inch.toFixed(2) + " inch";
+}
+
+/* 2. 원기둥 부피 */
+function calculate() {
+    let r = Number(document.getElementById("radius").value);
+    let h = Number(document.getElementById("height").value);
+
+    let volume = Math.PI * r * r * h;
+
+    document.getElementById("volumeResult").innerHTML =
+        "부피: " + volume.toFixed(2);
+}
+
+/* 3. 자리수 분리 */
+function splitNumber() {
+    let input = prompt("입력해주세요", "입력");
+    let num = parseInt(input);
+
+    let thousand = parseInt(num / 1000);
+    let hundred = parseInt(num % 1000 / 100);
+    let ten = parseInt(num % 100 / 10);
+    let one = parseInt(num % 10);
+
+    document.getElementById("digitResult").innerHTML =
+        "입력값: " + num + "<br>" +
+        "천의 자리: " + thousand + "<br>" +
+        "백의 자리: " + hundred + "<br>" +
+        "십의 자리: " + ten + "<br>" +
+        "일의 자리: " + one;
+}
+</script>
+</head>
+<body>
+
+<h1>자바스크립트 문제 3개</h1>
+
+<!-- 1. cm → feet/inch -->
+<h2>1. cm → feet & inch 변환</h2>
+<input type="text" id="cmInput" placeholder="cm 입력">
+<button onclick="convert()">변환</button>
+<p id="convertResult"></p>
+
+<!-- 2. 원기둥 부피 -->
+<h2>2. 원기둥 부피 계산</h2>
+<input type="text" id="radius" placeholder="반지름 입력">
+<input type="text" id="height" placeholder="높이 입력">
+<button onclick="calculate()">계산</button>
+<p id="volumeResult"></p>
+
+<!-- 3. 자리수 분리 -->
+<h2>3. 네 자리 정수 자리수 분리</h2>
+<button onclick="splitNumber()">입력하기</button>
+<p id="digitResult"></p>
+
+</body>
+</html>
