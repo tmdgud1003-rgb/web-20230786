@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>cm → feet & inch 변환</title>
+    <script>
+function convert() {
+    let cm = Number(document.getElementById("cmInput").value);
+
+    // cm → inch 변환
+    let totalInch = cm / 2.54;
+
+    // feet 계산 (12 inch = 1 feet)
+    let feet = Math.floor(totalInch / 12);
+
+    // 남은 inch 계산
+    let inch = totalInch % 12;
+
+    document.getElementById("result").innerHTML =
+        cm + " cm = " + feet + " feet " + inch.toFixed(2) + " inch";
+}
+function calculate() {
+    let r = Number(document.getElementById("radius").value);
+    let h = Number(document.getElementById("height").value);
+
+    let volume = Math.PI * r * r * h;
+
+    document.getElementById("result").innerHTML =
+        "부피: " + volume.toFixed(2);
+}
+// 사용자 입력
+    let input = prompt("입력해주세요", "입력");
+    let num = parseInt(input);
+
+    // 각 자리수 계산
+    let thousand = parseInt(num / 1000);
+    let hundred = parseInt(num % 1000 / 100);
+    let ten = parseInt(num % 100 / 10);
+    let one = parseInt(num % 10);
+
+    // 결과 출력
+    document.getElementById("result").innerHTML =
+        "입력값: " + num + "<br>" +
+        "천의 자리: " + thousand + "<br>" +
+        "백의 자리: " + hundred + "<br>" +
+        "십의 자리: " + ten + "<br>" +
+        "일의 자리: " + one;
+</script>
+</head>
+<body>
+
+<h2>센티미터 → 피트 & 인치 변환</h2>
+
+<input type="text" id="cmInput" placeholder="cm 입력">
+<button onclick="convert()">변환</button>
+
+<p id="result"></p>
+<br>
+
+<h2>원기둥 부피 계산</h2>
+
+<input type="text" id="radius" placeholder="반지름 입력">
+<input type="text" id="height" placeholder="높이 입력">
+<button onclick="calculate()">계산</button>
+
+<p id="result"></p>
+
+<h2>네 자리 정수 자리수 분리</h2>
+<p id="result"></p>
+
+</body>
+</html>
