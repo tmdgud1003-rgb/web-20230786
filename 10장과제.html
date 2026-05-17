@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>10장 DOM 통합 실습</title>
+    <style>
+        .practice-box {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-bottom: 1px dashed #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="practice-box">
+        <h2>실습 1: 제목 글자 변경</h2>
+        <h1 id="title1">처음 제목입니다.</h1>
+        <button id="changeButton">제목 바꾸기</button>
+    </div>
+
+    <div class="practice-box">
+        <h2>실습 2: 제목 스타일 변경</h2>
+        <h1 id="title2">스타일 변경 예제</h1>
+        <button id="styleButton">스타일 바꾸기</button>
+    </div>
+
+    <div class="practice-box">
+        <h2>실습 3: 이미지 속성 변경</h2>
+        <img id="image" alt="이미지가 여기에 표시됩니다.">
+        <br><br>
+        <button id="imageButton">이미지 보이기</button>
+    </div>
+
+    <script>
+        let title1 = document.getElementById("title1");
+        let button1 = document.getElementById("changeButton");
+
+        button1.onclick = function () {
+            title1.textContent = "JavaScript로 제목을 바꿨습니다.";
+        };
+
+        let title2 = document.getElementById("title2");
+        let button2 = document.getElementById("styleButton");
+
+        button2.onclick = function () {
+            title2.style.color = "white";
+            title2.style.backgroundColor = "blue";
+            title2.style.padding = "10px";
+        };
+
+        let image = document.getElementById("image");
+        let button3 = document.getElementById("imageButton");
+
+        button3.onclick = function () {
+            image.src = "https://placehold.co/300x200";
+            image.width = 300;
+            image.height = 200;
+        };
+    </script>
+
+</body>
+</html>
